@@ -1,0 +1,16 @@
+{
+  "name": "make-spritesheet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vinejs/vine": "^2.0.0",
+    "sharp": "^0.33.4"
+  }
+}
