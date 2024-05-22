@@ -1,4 +1,4 @@
-# Spritesheet Maker
+# Spritesheet Builder
 
 This is a simple tool to create a spritesheet from a folder of images.
 
@@ -22,9 +22,20 @@ output/
 ├─ mysprites1.png
 ├─ mysprites2.png
 ```
+## Command line
+
+#### Specify script file
+```
+--script <script file path> : specify the path to the script file
+```
+
+#### Specify a path origin
+```
+--origin <origin path> : specify the path to the origin folder
+```
 
 ## Script file
-You can configure the spritesheet maker with a script file. The script file is a JSON file with the following structure :
+You can configure the spritesheet builder with a script file. The script file is a JSON file with the following structure :
 
 ```json
 {
@@ -49,16 +60,4 @@ You can configure the spritesheet maker with a script file. The script file is a
         }
     ]
 }
-```
-
-## Command line
-
-#### Specify script file
-```
---script <script file path> : specify the path to the script file
-```
-
-#### Specify a path origin
-```
---origin <origin path> : specify the path to the origin folder
 ```
