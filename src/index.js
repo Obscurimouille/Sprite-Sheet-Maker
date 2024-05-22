@@ -1,17 +1,22 @@
 import fs from "fs";
 import sharp from "sharp";
-import { parseConfig } from "./services/config.js";
 import { parseScript } from "./services/script.js";
+import { args } from "./services/args.js";
+import path from "path";
 
-const config = await parseConfig("./config.json");
-console.log("config", config);
+if (!args.script) {
+  console.error("[!] No script file provided.");
+  process.exit(1);
+}
 
-const script = await parseScript(config.script);
-console.log("script", script);
+const script = await parseScript(path.join(args.origin || "", args.script));
 
-const globalInputFolder = script.inputFolder;
-const globalOutputFolder = script.output.folder;
-const globalOutputFilename = "spritesheet_{name}.png";
+const globalInputFolder = path.join(args.origin || "", script.inputFolder);
+const globalOutputFolder = path.join(args.origin || "", script.output.folder);
+const globalOutputFilename = "{name}.png";
+
+console.log("[*] Input folder:", globalInputFolder);
+console.log("[*] Output folder:", globalOutputFolder);
 
 const imageWidth = script.output.tile.width;
 const imageHeight = script.output.tile.height;

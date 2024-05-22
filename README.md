@@ -51,11 +51,14 @@ You can configure the spritesheet maker with a script file. The script file is a
 }
 ```
 
-## Config file
-You can specify the path to the script file with the `script` variable in the config file. The config file is a JSON file with the following structure :
+## Command line
 
-```json
-{
-    "script": "script.json"
-}
+#### Specify script file
+```
+--script <script file path> : specify the path to the script file
+```
+
+#### Specify a path origin
+```
+--origin <origin path> : specify the path to the origin folder
 ```
